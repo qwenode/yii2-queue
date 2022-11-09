@@ -22,7 +22,7 @@ class Job extends BaseObject implements JobInterface
     public $lockFileName;
     public $payload;
 
-    public function execute($queue)
+    public function execute($queue,$event)
     {
         $waitingTime = microtime(true) - $this->pushedAt;
         if (file_exists($this->lockFileName)) {

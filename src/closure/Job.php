@@ -27,7 +27,7 @@ class Job implements JobInterface
      * Unserializes and executes a closure.
      * @inheritdoc
      */
-    public function execute($queue)
+    public function execute($queue,$event)
     {
         $serializer = new Serializer();
         $closure = $serializer->unserialize($this->serialized);

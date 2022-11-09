@@ -20,7 +20,7 @@ class RetryJob extends BaseObject implements RetryableJobInterface
 {
     public $uid;
 
-    public function execute($queue)
+    public function execute($queue,$event)
     {
         file_put_contents($this->getFileName(), 'a', FILE_APPEND);
         throw new \Exception('Planned error.');

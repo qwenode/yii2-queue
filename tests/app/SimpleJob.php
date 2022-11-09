@@ -20,7 +20,7 @@ class SimpleJob extends BaseObject implements JobInterface
 {
     public $uid;
 
-    public function execute($queue)
+    public function execute($queue,$event)
     {
         file_put_contents($this->getFileName(), '');
     }

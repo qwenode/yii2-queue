@@ -16,7 +16,8 @@ interface JobInterface
 {
     /**
      * @param Queue $queue which pushed and is handling the job
+     * @param ExecEvent $event
      * @return void|mixed result of the job execution
      */
-    public function execute($queue);
+    public function execute($queue,$event);
 }

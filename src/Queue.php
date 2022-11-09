@@ -243,7 +243,7 @@ abstract class Queue extends Component
             return $this->handleError($event);
         }
         try {
-            $event->result = $event->job->execute($this);
+            $event->result = $event->job->execute($this,$event);
         } catch (\Exception $error) {
             $event->error = $error;
             return $this->handleError($event);
